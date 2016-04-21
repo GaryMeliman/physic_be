@@ -1,0 +1,14 @@
+<div class="col-sm-4 port-item margin-b-md">
+  <div class="work-desc">
+      <h3><%= medicine.nombre.upcase %></h3>
+      <span>Cantidad: <%= medicine.cantidad.strip.capitalize %></span><br>
+      <span>Laboratorio: <%= medicine.laboratorio %></span><br>
+      <span>Uso: <%= medicine.detalle %></span>
+      <hr>
+      <% if medicine.abavilities.count == 0 %>
+        No se encuentra en nuestra base de datos
+      <% else %>
+
+      <% end %>
+  </div>
+</div>

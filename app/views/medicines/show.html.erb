@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @medicine.nombre %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @medicine.cantidad %>
+</p>
+
+<p>
+  <strong>Indicaciones:</strong>
+  <%= @medicine.indicaciones %>
+</p>
+
+<p>
+  <strong>Laboratorio:</strong>
+  <%= @medicine.laboratorio %>
+</p>
+
+<p>
+  <strong>Composicion:</strong>
+  <%= @medicine.composicion %>
+</p>
+
+<p>
+  <strong>Posologia:</strong>
+  <%= @medicine.posologia %>
+</p>
+
+<p>
+  <strong>Detalle:</strong>
+  <%= @medicine.detalle %>
+</p>
+
+<p>
+  <strong>Efectos colaterales:</strong>
+  <%= @medicine.efectos_colaterales %>
+</p>
+
+<p>
+  <strong>Contraendicaciones:</strong>
+  <%= @medicine.contraendicaciones %>
+</p>
+
+<p>
+  <strong>Observaciones:</strong>
+  <%= @medicine.observaciones %>
+</p>
+
+<%= link_to 'Edit', edit_medicine_path(@medicine) %> |
+<%= link_to 'Back', medicines_path %>

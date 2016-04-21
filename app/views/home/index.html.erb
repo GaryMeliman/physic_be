@@ -1,0 +1,39 @@
+<section class="main-home">
+  <div class="home-bg" style="background: url(<%= asset_path('main') %>) no-repeat center;"></div>
+  <div class="home__header-content">
+    <h1 class="intro-title">Búsca el medicamento que necesites</h1>
+    <p class="intro-text">
+      Base de datos con mas de <strong>800 MEDICAMENTOS !!</strong>. <br>
+      Búsca la bioequivalencia y compara los precios de los medicamentos que necesites. <br>
+      Búsca farmacias cercanas y farmacias de turno <br><br>
+      <small>Nota: No recomendamos la automedicación</small>
+    </p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <%= text_field_tag :search, params[:search], placeholder: "buscar", class: "form-control search", :autocomplete => "off" %>
+          <div class="search" style="background-color:white;display:none;" id="search_box">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-bar">
+      <a href="index.html#" class="btn btn-custom">Más información</a>
+      <a href="index.html#" class="btn btn-custom-outline">Contáctanos</a>
+    </div>
+  </div>
+</section>
+<script type="text/javascript">
+  var input_search = $("#search");
+  input_search.on('keyup',function () {
+    if (input_search.val().length > 0) {
+      $("#search_box").fadeIn("medium")
+      $.ajax("http://localhost:3000/type_ahead/"+input_search.val());
+    }else {
+      $("#search_box").fadeOut("slow")
+      $("#search_box").empty();
+    }
+  });
+</script>

@@ -1,0 +1,21 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.search{
+  margin: 0 auto;
+  border-bottom-left-radius: initial !important;
+  border-bottom-right-radius: initial !important;
+}
+#search_box{
+  display: none;
+}
+.search_box_ul > li > a{
+  width: 90% !important;
+  padding-bottom: 20px !important;
+  padding-top: 20px !important;
+  color: #777;
+  text-decoration: none;
+}
+.search_box_ul > li > a:hover{
+  color: #333;
+}

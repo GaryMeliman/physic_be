@@ -1,0 +1,8 @@
+<ul class="search_box_ul">
+  <% @medicine_links.each_with_index do |medicine,i| %>
+    <hr style="<%= 'display:none;' if i == 0 %>">
+    <li>
+      <%= link_to "#{medicine.nombre} #{medicine.cantidad} #{medicine.laboratorio}".upcase , search_path(medicine.id) %>
+    </li>
+  <% end %>
+</ul>
