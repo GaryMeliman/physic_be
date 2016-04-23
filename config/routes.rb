@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get '/search/:id', to: 'home#search', as: 'search'
 
-  get 'type_ahead/:q', to: 'home#type_ahead'
+  get '/type_ahead/:q', to: 'home#type_ahead', as: 'type_ahead'
 
   get '/petitions/:medicine_id/:pharmacy_id', to:'petitions#create', as: 'create_petition'
 
