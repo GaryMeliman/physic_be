@@ -22,6 +22,34 @@
       </table>
     </div>
   </div>
+  <% if @petitions.present? %>
+    <div class="row">
+      <div class="table-responsive">
+        <h3>Mis medicamentos</h3>
+        <table class="table" id="petitions">
+          <thead>
+            <tr>
+              <th>
+                Nombre del medicamento
+              </th>
+              <th>
+                Usuario
+              </th>
+              <th>
+                Estado
+              </th>
+              <th>
+                Aceptar
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @petitions %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <% end %>
   <div class="row">
     <div class="table-responsive">
       <h3>Todos los medicamentos</h3>

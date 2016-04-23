@@ -1,0 +1,22 @@
+<tr id="<%= petition.id %>">
+  <td class="text-uppercase">
+    <%= petition.medicine.nombre + " " +  petition.medicine.cantidad + " " +  petition.medicine.laboratorio  %>
+  </td>
+  <td>
+    <%= petition.user.email %>
+  </td>
+  <td>
+    <% if petition.status %>
+      Aceptado
+    <% else %>
+      En progreso
+    <% end %>
+  </td>
+  <td>
+    <% if ! petition.status %>
+      <%= form_tag update_petition_path(petition.id), method: :get do %>
+        <%= submit_tag "Aceptar", class: "btn btn-primary" %>
+      <% end %>
+    <% end %>
+  </td>
+</tr>

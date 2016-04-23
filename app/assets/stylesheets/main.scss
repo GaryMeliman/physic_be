@@ -208,6 +208,12 @@ section {
   padding-bottom: 80px;
   background-color: #fff;
 }
+#map img {
+  max-width: none;
+}
+#map label {
+  width: auto; display:inline;
+}
 /* Helper classes
 ----------------------------------------------------------------------------- */
 .margin-t-md {
@@ -240,8 +246,11 @@ section {
 
 /*  Navigation
 ----------------------------------------------------------------------------- */
+.transparent{
+  background-color: transparent !important;
+}
 .navbar-custom {
-	background-color: transparent !important;
+	background-color: $primary ;
 	margin-bottom: 0px;
 	z-index: 1000;
 	border: none !important;
@@ -272,6 +281,7 @@ section {
 .navbar-custom .navbar-nav>.open>a, .navbar-custom .navbar-nav>.open>a:hover, .navbar-custom .navbar-nav>.open>a:focus,
 .navbar-custom .navbar-nav>li>a:hover, .navbar-custom .navbar-nav>li>a:focus {
 	background-color: transparent;
+  color: #f1f1f1;
 }
 .small .navbar-brand,.small .navbar-brand:hover{
 	color: #444 !important;

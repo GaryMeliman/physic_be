@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-custom">
+<nav class="navbar <%= 'navbar-default navbar-fixed-top transparent' if current_page? root_path %> navbar-custom">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -15,7 +15,7 @@
           <a href="index.html#contact">Farmacia popular</a>
         </li>
         <li>
-          <a href="#">Farmacia de turno</a>
+          <%= link_to "Farmacias cercanas", near_pharmacies_path %>
         </li>
         <li>
           <a href="#">Contacto</a>

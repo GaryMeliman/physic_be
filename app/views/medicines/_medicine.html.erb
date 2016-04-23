@@ -10,9 +10,18 @@
       <% else %>
         <% medicine.pharmacies.each do |pharmacy| %>
           <% if pharmacy.popular %>
-            <%= link_to "Comprar en farmacia popular "+ number_to_currency(pharmacy.abavilities.where(medicine_id: medicine.id).first.price, :unit => "$"), create_petition_path(medicine.id, pharmacy.id), class: "btn btn-primary", :remote => true %>
+            <% petition = current_user.petitions.where(medicine_id: medicine.id) %>
+            <% if petition.count == 0 %>
+              <%= link_to "Comprar en farmacia popular "+ number_to_currency(pharmacy.abavilities.where(medicine_id: medicine.id).first.price, :unit => "$"), create_petition_path(medicine.id, pharmacy.id), class: "btn btn-primary"  %>
+            <% else %>
+              <% if petition.first.status %>
+                Petición aceptada
+              <% else %>
+                Petición en progreso
+              <% end %>
+            <% end %>
           <% else %>
-            <%= link_to "#{pharmacy.nombre} " + number_to_currency(pharmacy.abavilities.where(medicine_id: medicine.id).first.price, :unit => "$"), root_path, class: "btn btn-primary", :remote => true %>
+            <%= link_to "#{pharmacy.nombre} " + number_to_currency(pharmacy.abavilities.where(medicine_id: medicine.id).first.price, :unit => "$"), show_map_path(pharmacy.id), class: "btn btn-primary", "data-toggle": "tooltip", title: "Ver mapa con indicaciones" %>
           <% end %>
         <%end%>
       <% end %>

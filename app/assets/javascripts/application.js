@@ -18,3 +18,5 @@
 //= require bootstrap-sprockets
 //= require bootstrap3-typeahead.min
 //= require bootstrap3-autocomplete-input.min
+//= require underscore
+//= require gmaps/google

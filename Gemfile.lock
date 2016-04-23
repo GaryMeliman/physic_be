@@ -40,7 +40,6 @@ GEM
     autoprefixer-rails (6.3.4)
       execjs
     bcrypt (3.1.11)
-    bhm-google-maps (0.3.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.6)
@@ -73,6 +72,7 @@ GEM
       railties (>= 3.2, < 5.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gmaps4rails (2.1.2)
     haml (4.0.7)
       tilt
     i18n (0.7.0)
@@ -198,13 +198,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bhm-google-maps
   bootstrap-sass (~> 3.3.6)
   bootstrap-typeahead-rails
   bootstrap3_autocomplete_input
   byebug
   coffee-rails (~> 4.1.0)
   devise
+  gmaps4rails
   jbuilder (~> 2.0)
   jquery-rails
   pg

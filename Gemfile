@@ -14,7 +14,7 @@ gem 'simple_form'
 gem 'bootstrap3_autocomplete_input'
 gem 'bootstrap-typeahead-rails'
 gem 'rails_admin'
-gem "bhm-google-maps"
+gem 'gmaps4rails'
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug'

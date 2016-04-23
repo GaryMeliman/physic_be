@@ -18,4 +18,10 @@ Rails.application.routes.draw do
 
   get '/petitions/:medicine_id/:pharmacy_id', to:'petitions#create', as: 'create_petition'
 
+  get '/petitions/:id', to: 'petitions#update', as: 'update_petition'
+
+  get '/near', to: 'home#near', as: 'near_pharmacies'
+
+  get '/show_map/:id', to: 'home#show_map', as: 'show_map'
+
 end

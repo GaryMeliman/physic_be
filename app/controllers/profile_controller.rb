@@ -7,6 +7,7 @@ class ProfileController < ApplicationController
     ids = @myMedicines.pluck(:medicine_id)
     @medicines = Medicine.where.not(id: ids)
     @abavilities = Abavility.new
+    @petitions = current_pharmacy.petitions if current_pharmacy.popular
   end
 
   def add_abavility
