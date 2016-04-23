@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421011651) do
+ActiveRecord::Schema.define(version: 20160423161320) do
 
   create_table "abavilities", force: :cascade do |t|
     t.integer  "pharmacy_id"
@@ -61,6 +61,19 @@ ActiveRecord::Schema.define(version: 20160421011651) do
 
   add_index "medicines", ["prince_id"], name: "index_medicines_on_prince_id"
 
+  create_table "petitions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "pharmacy_id"
+    t.integer  "medicine_id"
+    t.boolean  "status"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "petitions", ["medicine_id"], name: "index_petitions_on_medicine_id"
+  add_index "petitions", ["pharmacy_id"], name: "index_petitions_on_pharmacy_id"
+  add_index "petitions", ["user_id"], name: "index_petitions_on_user_id"
+
   create_table "pharmacies", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -79,6 +92,8 @@ ActiveRecord::Schema.define(version: 20160421011651) do
     t.float    "lng"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.boolean  "popular"
+    t.boolean  "status"
   end
 
   add_index "pharmacies", ["email"], name: "index_pharmacies_on_email", unique: true

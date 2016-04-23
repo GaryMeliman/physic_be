@@ -1,0 +1,2 @@
+module AbavilitiesHelper
+end

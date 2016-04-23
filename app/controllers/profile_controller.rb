@@ -3,7 +3,10 @@ class ProfileController < ApplicationController
   before_action :authenticate_user!, only:[:user]
 
   def pharmacy
-    @medicines = Medicine.all
+    @myMedicines = current_pharmacy.abavilities
+    ids = @myMedicines.pluck(:medicine_id)
+    @medicines = Medicine.where.not(id: ids)
+    @abavilities = Abavility.new
   end
 
   def add_abavility

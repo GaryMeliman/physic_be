@@ -1,0 +1,15 @@
+<tr id="<%= myMedicines.id %>">
+  <td class="text-uppercase">
+    <%= myMedicines.medicine.nombre + " " +  myMedicines.medicine.cantidad + " " +  myMedicines.medicine.laboratorio  %>
+  </td>
+  <td>
+    <% if myMedicines.stock %>
+      Si
+    <% else %>
+      No
+    <% end %>
+  </td>
+  <td>
+    <%= number_to_currency(myMedicines.price, :unit => "$") %>
+  </td>
+</tr>

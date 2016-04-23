@@ -14,13 +14,16 @@ gem 'simple_form'
 gem 'bootstrap3_autocomplete_input'
 gem 'bootstrap-typeahead-rails'
 gem 'rails_admin'
+gem "bhm-google-maps"
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
 end
 
 group :development do
-  gem 'pg'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+end
+group :production do
+  gem 'pg'
 end

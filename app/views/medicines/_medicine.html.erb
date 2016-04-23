@@ -8,7 +8,13 @@
       <% if medicine.abavilities.count == 0 %>
         No se encuentra en nuestra base de datos
       <% else %>
-
+        <% medicine.pharmacies.each do |pharmacy| %>
+          <% if pharmacy.popular %>
+            <%= link_to "Comprar en farmacia popular "+ number_to_currency(pharmacy.abavilities.where(medicine_id: medicine.id).first.price, :unit => "$"), create_petition_path(medicine.id, pharmacy.id), class: "btn btn-primary", :remote => true %>
+          <% else %>
+            <%= link_to "#{pharmacy.nombre} " + number_to_currency(pharmacy.abavilities.where(medicine_id: medicine.id).first.price, :unit => "$"), root_path, class: "btn btn-primary", :remote => true %>
+          <% end %>
+        <%end%>
       <% end %>
   </div>
 </div>

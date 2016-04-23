@@ -1,3 +1,69 @@
-<ul>
-  <%= render @medicines %>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="table-responsive">
+      <h3>Mis medicamentos</h3>
+      <table class="table" id="myMedicines">
+        <thead>
+          <tr>
+            <th>
+              Nombre del medicamento
+            </th>
+            <th>
+              Stock
+            </th>
+            <th>
+              Precio
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: "partials/myMedicines", collection: @myMedicines %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="table-responsive">
+      <h3>Todos los medicamentos</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>
+              Nombre del medicamento
+            </th>
+            <th>
+              Stock
+            </th>
+            <th>
+              Precio
+            </th>
+            <th>
+              Guardar
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @medicines.each do |medicine| %>
+            <%= form_for @abavilities, :remote => true do |f| %>
+              <tr id="<%= medicine.id %>">
+                <td class="text-uppercase">
+                  <%= medicine.nombre + " " +  medicine.cantidad + " " +  medicine.laboratorio  %>
+                </td>
+                <td>
+                  <%= f.check_box :stock %>
+                </td>
+                <td>
+                  <%= f.number_field :price %>
+                </td>
+                <td>
+                  <%= f.submit "Añadir", class: "btn btn-primary" %>
+                </td>
+              </tr>
+              <%= f.hidden_field :medicine_id, :value => medicine.id %>
+            <% end %>
+          <%end%>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

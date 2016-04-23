@@ -5,4 +5,5 @@ class Pharmacy < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :abavilities
   has_many :medicines, through: :abavilities
+  has_many :petitions
 end
