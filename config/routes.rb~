@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :abavilities, only:[:create,:update]
 
   get 'pharmacy', to: 'profile#pharmacy'
+  get 'user', to: 'profile#user'
 
   devise_for :users
   devise_for :pharmacies, :controllers => { registrations: 'registrations' }
@@ -26,9 +27,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get 'user', to: 'profile#user'
-      mount_devise_token_auth_for "User", at: 'auth'
-      get '/search/:id', to: 'home#search'
-      get '/medicine_search/:query', to: 'home#medicine_search'
+      scope :v1 do
+        mount_devise_token_auth_for "User", at: 'auth'
+      end
     end
   end
 

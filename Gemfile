@@ -15,6 +15,11 @@ gem 'bootstrap3_autocomplete_input'
 gem 'bootstrap-typeahead-rails'
 gem 'rails_admin'
 gem 'gmaps4rails'
+gem 'simple_token_authentication'
+gem 'devise_token_auth'
+gem 'omniauth'
+gem 'rack-cors', :require => 'rack/cors'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
