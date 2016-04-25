@@ -1,10 +1,53 @@
 == README
 
+== Version
+
 * Ruby version = > 2.1
 * Rails version = 4.2.6
 
-* Database creation
+== Gems
 
-  rake db:create
-  rake db:migrate
-  rake db:seed
+* gem 'rails', '4.2.6' => "Rails framework"
+* gem 'sass-rails', '~> 5.0' => "CSS precompiler"
+* gem 'uglifier', '>= 1.3.0' => "Rails framework"
+* gem 'coffee-rails', '~> 4.1.0' => "JavaScript precompiler"
+* gem 'jquery-rails' => "Jquery assets"
+* gem 'turbolinks' => "Fas load pages"
+* gem 'jbuilder', '~> 2.0' => "JSON generator"
+* gem 'sdoc', '~> 0.4.0' => "Fast documentation"
+* gem 'devise' => "Users modules"
+* gem 'bootstrap-sass', '~> 3.3.6' => "Bootstrap assets"
+* gem 'simple_form' => "Bootstrap form generator (not used)"
+* gem 'bootstrap3_autocomplete_input' => "Autocomplete assets (not used)"
+* gem 'bootstrap-typeahead-rails' => "Autocomplete assets (not used)"
+* gem 'rails_admin' => "Fast CRUD"
+* gem 'gmaps4rails' => "GOOGLE maps generator"
+* gem 'simple_token_authentication' => "Users API authentication (not used)"
+* gem 'devise_token_auth' => "Users API authentication"
+* gem 'omniauth' => "Authentication middlewhere (not used but required)"
+* gem 'rack-cors', :require => 'rack/cors' => "Cross domains requests"
+* gem 'sqlite3' => "Database (only development)"
+* gem 'byebug' => "Better bugs (only development)"
+* gem 'web-console', '~> 2.0' => "Rails console (only development)"
+* gem 'spring' => "Rails framework"
+* gem 'pg' => "Database only production"
+
+== Prerequisites
+
+* Postgresql
+* Ruby
+* Rails
+* Sqlite3
+* Unix system optional
+
+== Install
+
+* git clone app
+* cd app
+* bundle
+
+== Database creation
+
+* rake db:create
+* rake db:migrate
+* rake db:seed

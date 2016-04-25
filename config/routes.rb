@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'pharmacy', to: 'profile#pharmacy'
 
   devise_for :users
+
   devise_for :pharmacies, :controllers => { registrations: 'registrations' }
 
   root 'home#index'
@@ -31,5 +32,4 @@ Rails.application.routes.draw do
       get '/medicine_search/:query', to: 'home#medicine_search'
     end
   end
-
 end

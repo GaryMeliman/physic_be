@@ -1,6 +1,7 @@
 <div class="container">
-  <div class="row home">
-    <h3>Registro de farmacia</h3>
+  <div class="row">
+    <h3 class="text-center">Registro de farmacia</h3>
+    <br>
     <div class="col-md-12">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name) , class: "form-main") do |f| %>
         <%= devise_error_messages! %>
@@ -32,15 +33,15 @@
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <%= f.label :password_confirmation,"Confirma contraseña" %><br />
+              <%= f.label :password_confirmation,"Confirmar contraseña" %><br />
               <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
             </div>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-md-12">
-            <%= f.label :polular, "¿Es famacia popular?" %>
+          <div class="col-md-12 text-center">
+            <%= f.label :polular, "¿Es famacia popular?", class: "" %>
             <br>
             <%= f.check_box :popular, class: "form-control" %>
           </div>
@@ -55,7 +56,7 @@
         </div>
         <br>
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-12 text-center">
             <%= f.submit "Registrar", class: "btn btn-custom btn-primary" %>
           </div>
         </div>
@@ -64,7 +65,9 @@
         <%= f.hidden_field :ubicacion, id: "ubicacion"  %>
       <% end %>
       <br>
-      <%= render "pharmacies/shared/links" %>
+      <div class="text-center">
+        <%= render "pharmacies/shared/links" %>
+      </div>
     </div>
   </div>
 </div>
