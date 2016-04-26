@@ -1,5 +1,5 @@
 class PetitionsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:create]
 
   def create
     @petition = current_user.petitions.new(medicine_id: params[:medicine_id], pharmacy_id: params[:pharmacy_id] , status: false)

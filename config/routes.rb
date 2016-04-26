@@ -30,6 +30,7 @@ Rails.application.routes.draw do
       mount_devise_token_auth_for "User", at: 'auth'
       get '/search/:id', to: 'home#search'
       get '/medicine_search/:query', to: 'home#medicine_search'
+      get '/petitions/create/:pharmacy_id/:medicine_id', to: 'petitions#create'
     end
   end
 end
