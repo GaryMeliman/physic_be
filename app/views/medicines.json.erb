@@ -1,0 +1,13 @@
+{
+    "medicines": [
+	<% @medicines.each_with_index do |medicine, index|  %>
+	     {
+		"id": <%= medicine.id %>,
+	 	"nombre": "<%= medicine.nombre %>",
+		"cantidad": "<%= medicine.cantidad %>",
+		"laboratorio": "<%= medicine.laboratorio %>",
+		"detalle": "<%= medicine.detalle %>"
+	     } <%= ', ' if @medicines.size - 1 != index %>
+	<%end%>
+    ]
+}
