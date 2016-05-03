@@ -8,4 +8,8 @@ class API::V1::HomeController < Api::V1::BaseController
     @medicines = Medicine.where("nombre LIKE ? ","%" + params[:query].to_s + "%" ).take(5)
     render :file => "medicines.json.erb", :content_type => "application/json" 
   end
+  def search_abavilities
+    @abavilities = Abavility.includes(:pharmacy).where(medicine_id: params[:id])
+    render @abavilities
+  end
 end
