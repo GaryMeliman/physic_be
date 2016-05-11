@@ -5,7 +5,7 @@ class API::V1::HomeController < Api::V1::BaseController
     render @prince
   end
   def medicine_search
-    @medicines = Medicine.where("nombre LIKE ? ","%" + params[:query].to_s + "%" ).take(5)
+    @medicines = Medicine.where("nombre LIKE ? ","%" + params[:query].to_s + "%" )
     render :file => "medicines.json.erb", :content_type => "application/json" 
   end
   def search_abavilities
