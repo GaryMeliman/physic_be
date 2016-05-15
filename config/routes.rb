@@ -31,6 +31,7 @@ Rails.application.routes.draw do
       get '/search/:id', to: 'home#search'
       get '/medicine_search/:query', to: 'home#medicine_search'
       get '/petitions/create/:pharmacy_id/:medicine_id', to: 'petitions#create'
+      get '/petitions', to:'petitions#index'
       get '/search_abavilities/:id', to: 'home#search_abavilities'
     end
   end
