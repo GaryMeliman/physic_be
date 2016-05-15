@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160423222058) do
+ActiveRecord::Schema.define(version: 20160515174132) do
 
   create_table "abavilities", force: :cascade do |t|
     t.integer  "pharmacy_id"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20160423222058) do
     t.boolean  "status"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.decimal  "price"
   end
 
   add_index "petitions", ["medicine_id"], name: "index_petitions_on_medicine_id"
