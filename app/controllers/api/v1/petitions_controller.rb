@@ -1,8 +1,8 @@
 class API::V1::PetitionsController < Api::V1::BaseController
-  #before_action :authenticate_user!
+  before_action :authenticate_user!
   
   def index
-    @petitions = User.first.petitions
+    @petitions = current_user.first.petitions
   end
 
   def create
