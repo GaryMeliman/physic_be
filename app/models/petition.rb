@@ -5,6 +5,7 @@ class Petition < ActiveRecord::Base
  
   before_create do
     self.status = false
+    nil
   end
 
   validates :medicine_id, uniqueness: { scope: :user_id }
