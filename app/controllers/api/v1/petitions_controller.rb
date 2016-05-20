@@ -2,7 +2,7 @@ class API::V1::PetitionsController < Api::V1::BaseController
   before_action :authenticate_user!
   
   def index
-    @petitions = current_user.first.petitions
+    @petitions = current_user.petitions
   end
 
   def create
