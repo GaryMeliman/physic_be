@@ -1,5 +1,5 @@
 json.array! @petitions do |petition|
-  json.price petitions.price
+  json.price petition.price
   json.status petition.status
   json.medicine petition.medicine
 end
