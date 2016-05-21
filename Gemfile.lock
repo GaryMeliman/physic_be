@@ -73,6 +73,9 @@ GEM
       rails (< 6)
     erubis (2.7.0)
     execjs (2.6.0)
+    fcm (0.0.1)
+      httparty
+      json
     font-awesome-rails (4.5.0.1)
       railties (>= 3.2, < 5.1)
     globalid (0.3.6)
@@ -81,6 +84,9 @@ GEM
     haml (4.0.7)
       tilt
     hashie (3.4.3)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -105,6 +111,7 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
+    multi_xml (0.5.5)
     nested_form (0.3.2)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -225,6 +232,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   devise_token_auth
+  fcm
   gmaps4rails
   jbuilder (~> 2.0)
   jquery-rails

@@ -20,6 +20,7 @@ gem 'devise_token_auth'
 gem 'omniauth'
 gem 'active_model_serializers'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'fcm'
 
 group :development, :test do
   gem 'sqlite3'

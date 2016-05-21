@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160515174132) do
+ActiveRecord::Schema.define(version: 20160521042015) do
 
   create_table "abavilities", force: :cascade do |t|
     t.integer  "pharmacy_id"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 20160515174132) do
 
   add_index "abavilities", ["medicine_id"], name: "index_abavilities_on_medicine_id"
   add_index "abavilities", ["pharmacy_id"], name: "index_abavilities_on_pharmacy_id"
+
+  create_table "firebases", force: :cascade do |t|
+    t.string   "token"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "firebases", ["user_id"], name: "index_firebases_on_user_id"
 
   create_table "medicines", force: :cascade do |t|
     t.string   "nombre"
@@ -111,6 +120,7 @@ ActiveRecord::Schema.define(version: 20160515174132) do
     t.text     "tokens"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "fcm"
   end
 
   add_index "users", ["email"], name: "index_users_on_email"

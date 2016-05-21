@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'firebase/create'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :abavilities, only:[:create,:update]
 
@@ -33,6 +35,7 @@ Rails.application.routes.draw do
       get '/petitions/create/:pharmacy_id/:medicine_id', to: 'petitions#create'
       get '/petitions', to:'petitions#index'
       get '/search_abavilities/:id', to: 'home#search_abavilities'
+      get '/fcm/:token', to: 'profile#fcm'
     end
   end
 end
