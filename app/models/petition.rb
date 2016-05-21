@@ -11,7 +11,7 @@ class Petition < ActiveRecord::Base
   after_update do
     fcm = FCM.new("AIzaSyDIiaIOSKlEI0Ekzrsy8fyTrlTAaQtRPbw")
     registration_id = [self.user.fcm]
-    options = {data: "Su cotización ha sido aceptada, medicamento: "+self.medicine.nombre + ", precio: " + self.price.to_s }
+    options = {data: {score: "123"}, collapse_key: "updated_score"}
     response = fcm.send(registration_id,options)
     nil
   end
