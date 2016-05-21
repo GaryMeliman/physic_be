@@ -8,9 +8,9 @@ class Petition < ActiveRecord::Base
     self.status = false
     nil
   end
-  before_update do
+  after_update do
     fcm = FCM.new("AIzaSyDIiaIOSKlEI0Ekzrsy8fyTrlTAaQtRPbw")
-    registration_id = ["1"]
+    registration_id = [self.user.fcm]
     options = {data: {score: "123"}, collapse_key: "updated_score"}
     response = fcm.send(registration_id,options)
     nil
