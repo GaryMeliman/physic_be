@@ -7,7 +7,7 @@ class API::V1::ProfileController < Api::V1::BaseController
     end
   end
   def fcm
-    curren.update fcm: params[:token].to_s
+    current_user.update fcm: params[:token].to_s
     render nothing: true
   end
 end
