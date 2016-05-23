@@ -5,5 +5,4 @@ class User < ActiveRecord::Base
           :omniauthable
   include DeviseTokenAuth::Concerns::User
   has_many :petitions
-  has_many :firebases
 end

@@ -21,9 +21,10 @@ gem 'omniauth'
 gem 'active_model_serializers'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'fcm'
+gem 'rails-erd'
+gem 'pg'
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'byebug'
 end
 
@@ -32,6 +33,5 @@ group :development do
   gem 'spring'
 end
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
